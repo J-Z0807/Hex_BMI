@@ -16,7 +16,38 @@
 
 <body>
     <header>
+        <div class="header__area">
+            <div class="header__logo">
+                <img src="image/BMICLogo.png" alt="BMI LOGO">
+            </div>
 
+            <div class="header__inputArea">
+                <span>身高 cm</span>
+                <input type="number" placeholder="請輸入身高">
+
+                <span>體重 kg</span>
+                <input type="number" placeholder="請輸入體重">
+            </div>
+
+            <div class="header__calculateBtn__area">
+                <div class="header__calculateBtn display_none">看結果</div>
+
+                <div class="header__resultBtn">
+                    <div class="header__resultBtn__area">
+                        <p class="header__resultBtn__value">20.90</p>
+                        <p>BMI</p>
+
+                        <div class="refresh">
+                            <img src="image/icons_loop.png" alt="刷新按鈕">
+                        </div>
+                    </div>
+
+                    <div class="header__resultText__area">
+                        <h1 class="header__resultText">理想</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>

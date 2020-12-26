@@ -1,1 +1,174 @@
-/* No CSS *//*# sourceMappingURL=all.css.map */
+@charset "UTF-8";
+body {
+  margin: 0;
+}
+
+.header__area {
+  height: 300px;
+  background-color: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__area .header__logo {
+  margin-right: 97px;
+  margin-top: 35px;
+}
+
+.header__area .header__inputArea {
+  display: -ms-grid;
+  display: grid;
+  margin-right: 70px;
+  /*改變input提示文字顏色*/
+  /*修改提示文字的顏色*/
+  /* 消除number上下箭頭 */
+  /*在Google下移除input[number]的上下箭頭*/
+  /*在firefox下移除input[number]的上下箭頭*/
+}
+
+.header__area .header__inputArea input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #e2dfdf;
+}
+
+.header__area .header__inputArea input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #e2dfdf;
+}
+
+.header__area .header__inputArea input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #e2dfdf;
+}
+
+.header__area .header__inputArea input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #e2dfdf;
+}
+
+.header__area .header__inputArea input[type='number']::-webkit-outer-spin-button,
+.header__area .header__inputArea input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+.header__area .header__inputArea input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.header__area .header__inputArea input {
+  font-size: 20px;
+  color: #e2dfdf;
+  background-color: #707070;
+  border-radius: 10px;
+  border: 2px solid #FFD366;
+  padding: 5px 10px;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.header__area .header__inputArea span {
+  color: #FFD366;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header__area .header__calculateBtn__area .header__calculateBtn {
+  background-color: #FFD366;
+  font-size: 24px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  border-radius: 50%;
+  margin-top: 35px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header__area .header__calculateBtn__area .header__calculateBtn:hover {
+  -webkit-box-shadow: 0 0 10px 3px #FFC431;
+          box-shadow: 0 0 10px 3px #FFC431;
+}
+
+.header__area .header__calculateBtn__area .header__calculateBtn:active {
+  background-color: #DEA921;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.header__area .header__resultBtn {
+  color: #86D73F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 35px;
+}
+
+.header__area .header__resultBtn .header__resultBtn__area {
+  border: 6px solid #86D73F;
+  border-radius: 50%;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  position: relative;
+}
+
+.header__area .header__resultBtn .header__resultBtn__area .header__resultBtn__value {
+  font-size: 32px;
+}
+
+.header__area .header__resultBtn .header__resultBtn__area p {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.header__area .header__resultBtn .header__resultBtn__area .refresh {
+  position: absolute;
+  right: 0;
+  background-color: #86D73F;
+  border-radius: 50%;
+  width: 25px;
+  padding: 5px 2px 0 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header__area .header__resultBtn .header__resultBtn__area .refresh:hover {
+  background-color: #d6f1be;
+}
+
+.header__area .header__resultBtn .header__resultText__area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__area .header__resultBtn .header__resultText__area .header__resultText {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header__area .display_none {
+  display: none;
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+}
+
+.header__area {
+    height: 300px;
+    background-color: $dark_black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__logo {
+        margin-right: 97px;
+        margin-top: 35px;
+    }
+
+    .header__inputArea {
+        display: grid;
+        margin-right: 70px;
+
+        /*改變input提示文字顏色*/
+        @include change-input-placeholder-text-color($light_gray);
+
+        /* 消除number上下箭頭 */
+        @include remove-number-input-arrow;
+
+        input {
+            font-size: 20px;
+            color: $light_gray;
+            background-color: lighten($dark_black, 18%);
+            border-radius: 10px;
+            border: 2px solid $primary_yellow;
+            padding: 5px 10px;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        span {
+            color: $primary_yellow;
+            font-size: 18px;
+            @include m-y(10px);
+        }
+    }
+
+    .header__calculateBtn__area {
+        .header__calculateBtn {
+            background-color: $primary_yellow;
+            font-size: 24px;
+            user-select: none;
+            @include p-x(20px);
+            @include p-y(38px);
+            border-radius: 50%;
+            margin-top: 35px;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                box-shadow: 0 0 10px 3px #FFC431; // x y 光暈程度 大小 顏色
+            }
+
+            &:active {
+                background-color: $btn_active;
+                box-shadow: unset;
+            }
+        }
+    }
+
+    .header__resultBtn {
+        color: $green;
+        display: flex;
+        margin-top: 35px;
+
+        .header__resultBtn__area {
+            border: 6px solid $green;
+            border-radius: 50%;
+            @include p-x(28px);
+            @include p-y(35px);
+            position: relative;
+
+            .header__resultBtn__value {
+                font-size: 32px;
+            }
+
+            p {
+                @include m-y(0);
+                text-align: center;
+            }
+
+            .refresh {
+                position: absolute;
+                right: 0;
+                background-color: $green;
+                border-radius: 50%;
+                width: 25px;
+                padding: 5px 2px 0 3px;
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: lighten($color: $green, $amount: 30%);
+                }
+            }
+        }
+
+        .header__resultText__area {
+            display: flex;
+
+            .header__resultText {
+                align-self: center;
+                margin-left: 15px;
+                @include m-y(0);
+            }
+        }
+    }
+
+
+    .display_none {
+        display: none;
+    }
+}
