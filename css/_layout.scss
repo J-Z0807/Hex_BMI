@@ -13,14 +13,37 @@ body {
     justify-content: center;
     align-items: center;
 
+    @include mobile-L {
+        display: block;
+        @include p-y(30px);
+    }
+
     .header__logo {
         margin-right: 97px;
         margin-top: 35px;
+
+        @include tablet {
+            margin-right: 70px;
+        }
+
+        @include mobile-L {
+            margin: 0;
+            text-align: center;
+        }
     }
 
     .header__inputArea {
         display: grid;
         margin-right: 70px;
+
+        @include tablet {
+            margin-right: 25px;
+        }
+
+        @include mobile-L {
+            margin-right: 0;
+            @include p-x(20px);
+        }
 
         /*改變input提示文字顏色*/
         @include change-input-placeholder-text-color($light_gray);
@@ -36,7 +59,6 @@ body {
             border: 2px solid $primary_yellow;
             padding: 5px 10px;
             outline: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
             &:focus {
                 box-shadow: 0 0 8px 2px $primary_yellow; // x y 光暈程度 大小 顏色
@@ -51,19 +73,30 @@ body {
     }
 
     .header__calculateBtn__area {
+        max-width: 150px;
+
+        @include mobile-L {
+            margin: 0 auto;
+        }
+
         .header__calculateBtn {
             background-color: $primary_yellow;
             font-size: 24px;
             user-select: none;
-            @include p-x(20px);
+            @include p-x(10px);
             @include p-y(38px);
+            text-align: center;
             border-radius: 50%;
-            margin-top: 35px;
             cursor: pointer;
-            transition: 0.5s;
+            margin: 35px auto 0 auto;
+            width: 100%;
+
+            @include mobile-L {
+                width: 70%;
+            }
 
             &:hover {
-                box-shadow: 0 0 10px 3px #FFC431; // x y 光暈程度 大小 顏色
+                box-shadow: 0 0 10px 3px $primary_dark_yellow; // x y 光暈程度 大小 顏色    
             }
 
             &:active {

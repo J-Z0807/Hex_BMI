@@ -23,15 +23,37 @@
         border-left: 8px solid $green;
         justify-content: space-between;
 
+        @include mobile-L {
+            display: block;
+            border-left: unset;
+            border-top: 8px solid $green;
+        }
+
         p {
             display: flex;
             align-self: center;
+
+            @include mobile-L {
+                display: block;
+                text-align: center;
+                border-bottom: 1px solid $dark_black;
+                padding-bottom: 20px;
+            }
         }
 
         small {
             margin-right: 10px;
             display: flex;
             align-self: center;
+
+            @include mobile-L {
+                color: $blue;
+                font-weight: bold;
+                font-size: 20px;
+                display: block;
+                text-align: center;
+                margin-right: 0;
+            }
         }
 
         .main__list__status,
@@ -43,10 +65,29 @@
 
         .main__list__status {
             margin-left: 20px;
+
+            @include mobile-L {
+                margin-left: 0;
+            }
+        }
+
+        .main__list__date__title--mobile {
+            display: none;
+
+            @include mobile-L {
+                display: block;
+            }
         }
 
         .main__list__date {
             margin-right: 20px;
+
+            @include mobile-L {
+                margin: 0;
+                padding-bottom: 20px;
+                border-bottom: 0;
+                font-size: 20px;
+            }
         }
 
     }
