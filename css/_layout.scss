@@ -2,8 +2,12 @@ body {
     margin: 0;
 }
 
+.display_none {
+    display: none !important;
+}
+
 .header__area {
-    height: 300px;
+    @include p-y(60px);
     background-color: $dark_black;
     display: flex;
     justify-content: center;
@@ -33,6 +37,10 @@ body {
             padding: 5px 10px;
             outline: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+            &:focus {
+                box-shadow: 0 0 8px 2px $primary_yellow; // x y 光暈程度 大小 顏色
+            }
         }
 
         span {
@@ -112,9 +120,10 @@ body {
             }
         }
     }
+}
 
-
-    .display_none {
-        display: none;
-    }
+.footer__area {
+    background-color: $primary_yellow;
+    @include p-y(17px);
+    text-align: center;
 }

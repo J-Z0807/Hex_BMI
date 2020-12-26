@@ -1,0 +1,53 @@
+.main__area {
+    background-color: $light_gray;
+    padding-bottom: 50px;
+    min-height: 297px;
+
+    .main__title--no_Record {
+        text-align: center;
+        color: $gray;
+        font-size: 40px;
+    }
+
+    .main__title {
+        @include m-y(0);
+        @include p-y(40px);
+        text-align: center;
+    }
+
+    .main__list {
+        display: flex;
+        margin: 0 auto 15px auto;
+        width: 80%;
+        background-color: $white;
+        border-left: 8px solid $green;
+        justify-content: space-between;
+
+        p {
+            display: flex;
+            align-self: center;
+        }
+
+        small {
+            margin-right: 10px;
+            display: flex;
+            align-self: center;
+        }
+
+        .main__list__status,
+        .main__list__BMI,
+        .main__list__weight,
+        .main__list__height {
+            font-size: 24px;
+        }
+
+        .main__list__status {
+            margin-left: 20px;
+        }
+
+        .main__list__date {
+            margin-right: 20px;
+        }
+
+    }
+}
