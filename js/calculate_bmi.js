@@ -76,9 +76,11 @@ $(document).ready(function(){
                 "height":height,
                 "weight":weight,
                 "date": `${date.getDate()}-${(date.getMonth()+1)}-${date.getFullYear()}`,
-                "border-color": record_border_color 
+                "border-color": record_border_color
             }
 
+            $(".main__title--no_Record").addClass("display_none"); //隱藏查無紀錄訊息
+            
             $(".main__list__area").prepend(`<div class="main__list main__list__border--${Data['border-color']}">
             <p class="main__list__status">${Data['resultText']}</p>
             <p><small>BMI</small><span class="main__list__BMI"><b>${Data['BMI']}</b></span></p>
