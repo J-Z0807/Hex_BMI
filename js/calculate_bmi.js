@@ -4,7 +4,7 @@ let localStorageKey = Object.keys(localStorage).sort(function(a, b) {
 });
 
 //抓取所有紀錄的排序過後最大key值(最大為最後一筆)
-localStorageKey = localStorageKey[localStorageKey.length-1];
+localStorageKey = localStorageKey[localStorageKey.length-1] || "";
 
 //用來命名紀錄的key值索引(抓取key的最後一個字元看他索引是多少，加一是為了可以新增下一筆資料)
 var dataIndex = localStorageKey != "" ? parseInt(localStorageKey.substr(localStorageKey.lastIndexOf("_") + 1)) + 1 : 0;
@@ -159,17 +159,5 @@ function del_record(index){
     if(confirm("你確定要刪除此筆紀錄嗎?")){
         localStorage.removeItem("BMI_DATA_" + index);
         $(".trash" + index).parent()[0].remove(); //及時刪除畫面中該筆BMI紀錄
-
-        //重新抓取最後一筆索引值
-        //排序
-        localStorageKey = Object.keys(localStorage).sort(function(a, b) {
-            return a.substr(a.lastIndexOf("_") + 1) - b.substr(b.lastIndexOf("_") + 1);
-        });
-
-        //抓取所有紀錄的排序過後最大key值(最大為最後一筆)
-        localStorageKey = localStorageKey[localStorageKey.length-1];
-
-        //用來命名紀錄的key值索引(抓取key的最後一個字元看他索引是多少，加一是為了可以新增下一筆資料)
-        dataIndex = localStorageKey != "" ? parseInt(localStorageKey.substr(localStorageKey.lastIndexOf("_") + 1)) + 1 : 0;
     }
 }
