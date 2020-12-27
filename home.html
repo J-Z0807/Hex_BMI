@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <link rel="icon" href="image/BMICLogo.png">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="六角-BMI計算">
+    <meta property="og:type" content="BMI計算">
+    <meta property="og:site_name" content="六角學院">
+    <meta property="og:description" content="JS練習作品">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>BMI計算系統</title>
+
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <header>
+        <div class="header__area">
+            <div class="header__logo">
+                <img src="image/BMICLogo.png" alt="BMI LOGO">
+            </div>
+
+            <div class="header__inputArea">
+                <span>身高 cm</span>
+                <input class="height" type="number" placeholder="請輸入身高">
+
+                <span>體重 kg</span>
+                <input class="weight" type="number" placeholder="請輸入體重">
+            </div>
+
+            <div class="header__calculateBtn__area">
+                <div class="header__calculateBtn"><span>看結果</span></div>
+
+                <div class="header__resultBtn display_none">
+                    <div class="header__resultBtn__area">
+                        <p class="header__resultBtn__value"></p>
+                        <p>BMI</p>
+
+                        <div class="refresh" onclick="refresh()">
+                            <img src="image/icons_loop.png" alt="刷新按鈕">
+                        </div>
+                    </div>
+
+                    <div class="header__resultText__area">
+                        <h1 class="header__resultText"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main__area">
+            <h1 class="main__title">BMI紀錄</h1>
+
+            <h2 class="main__title--no_Record">查 無 紀 錄</h2>
+
+            <div class="main__list__area">
+                <!-- 待JS動態載入 -->
+            </div>
+
+            <div class="more_record display_none" onclick="all_record()">
+                <p>顯示更多</p>
+                <img src="image/icons_down.png" alt="more record">
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer__area">
+            <img src="https://github.com/199685/BMI/blob/master/images/BMICLogodark.png?raw=true" alt="footer_logo">
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/calculate_bmi.js"></script>
+</body>
+
+</html>

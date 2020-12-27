@@ -1,0 +1,163 @@
+.main__area {
+    background-color: $light_gray;
+    padding-bottom: 50px;
+    min-height: 297px;
+
+    .main__title--no_Record {
+        text-align: center;
+        color: $gray;
+        font-size: 40px;
+    }
+
+    .main__title {
+        @include m-y(0);
+        @include p-y(40px);
+        text-align: center;
+    }
+
+    .main__list {
+        display: flex;
+        margin: 0 auto 15px auto;
+        width: 80%;
+        background-color: $white;
+
+        @include mobile-L {
+            display: block;
+            border-left: unset !important;
+        }
+
+        p {
+            display: flex;
+            align-self: center;
+            width: 20%;
+
+            @include mobile-L {
+                display: block;
+                text-align: center;
+                border-bottom: 1px solid $dark_black;
+                padding-bottom: 20px;
+                width: 100%;
+            }
+        }
+
+        small {
+            margin-right: 10px;
+            display: flex;
+            align-self: center;
+
+            @include mobile-L {
+                color: $blue;
+                font-weight: bold;
+                font-size: 20px;
+                display: block;
+                text-align: center;
+                margin-right: 0;
+            }
+        }
+
+        .main__list__status,
+        .main__list__BMI,
+        .main__list__weight,
+        .main__list__height {
+            font-size: 24px;
+        }
+
+        .main__list__status {
+            margin-left: 20px;
+
+            @include mobile-L {
+                margin-left: 0;
+            }
+        }
+
+        .main__list__date__title--mobile {
+            display: none;
+
+            @include mobile-L {
+                display: block;
+            }
+        }
+
+        .main__list__date {
+            margin-right: 20px;
+            justify-content: center;
+
+            @include mobile-L {
+                margin: 0;
+                padding-bottom: 20px;
+                border-bottom: 0;
+                font-size: 20px;
+            }
+        }
+    }
+
+    //邊框顏色
+    .main__list__border--Too_light {
+        //過輕
+        border-left: 8px solid $blue;
+
+        @include mobile-L {
+            border-top: 8px solid $blue;
+        }
+    }
+
+    .main__list__border--ideal {
+        //理想
+        border-left: 8px solid $green;
+
+        @include mobile-L {
+            border-top: 8px solid $green;
+        }
+    }
+
+    .main__list__border--Too_heavy {
+        //過重
+        border-left: 8px solid $orange;
+
+        @include mobile-L {
+            border-top: 8px solid $orange;
+        }
+    }
+
+    .main__list__border--Mild_obesity {
+        //輕度肥胖
+        border-left: 8px solid $dark_orange;
+
+        @include mobile-L {
+            border-top: 8px solid $dark_orange;
+        }
+    }
+
+    .main__list__border--Moderate_obesity {
+        //中度肥胖
+        border-left: 8px solid $dark_orange;
+
+        @include mobile-L {
+            border-top: 8px solid $dark_orange;
+        }
+    }
+
+    .main__list__border--Severe_obesity {
+        //重度肥胖
+        border-left: 8px solid $red;
+
+        @include mobile-L {
+            border-top: 8px solid $red;
+        }
+    }
+
+    //更多紀錄按鈕
+    .more_record {
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        p {
+            font-size: 26px;
+            margin-bottom: 0;
+        }
+    }
+}

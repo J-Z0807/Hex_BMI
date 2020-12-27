@@ -1,0 +1,48 @@
+//padding x
+@mixin p-x($value) {
+    padding-left: $value;
+    padding-right: $value;
+}
+
+//padding y
+@mixin p-y($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
+//margin x
+@mixin m-x($value) {
+    margin-left: $value;
+    margin-right: $value;
+}
+
+//margin y
+@mixin m-y($value) {
+    margin-top: $value;
+    margin-bottom: $value;
+}
+
+//以下為響應式設定
+@mixin tablet {
+    @media (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin mobile-L {
+    @media (max-width:426px) {
+        @content;
+    }
+}
+
+@mixin mobile-M {
+    @media (max-width:376px) {
+        @content;
+    }
+}
+
+@mixin mobile-S {
+    @media (max-width:320px) {
+        @content;
+    }
+}
