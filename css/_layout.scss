@@ -118,6 +118,7 @@ body {
             @include p-y(35px);
             position: relative;
             min-width: 70px;
+            max-height: 55px;
 
             .header__resultBtn__value {
                 font-size: 32px;
@@ -151,7 +152,6 @@ body {
                 align-self: center;
                 margin-left: 15px;
                 @include m-y(0);
-                white-space: nowrap;
             }
         }
     }
