@@ -153,5 +153,9 @@ function del_record(index){
     if(confirm("你確定要刪除此筆紀錄嗎?")){
         localStorage.removeItem("BMI_DATA" + index);
         $(".trash" + index).parent()[0].remove(); //及時刪除畫面中該筆BMI紀錄
+
+        //重新抓取最後一筆索引值
+        localStorageKey = Object.keys(localStorage).sort()[localStorage.length-1] || "";
+        dataIndex = localStorageKey != "" ? parseInt(localStorageKey.substr(-1)) + 1 : 0;
     }
 }
