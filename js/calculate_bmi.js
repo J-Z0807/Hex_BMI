@@ -76,7 +76,7 @@ $(document).ready(function(){
                 "height":height,
                 "weight":weight,
                 "date": `${date.getDate()}-${(date.getMonth()+1)}-${date.getFullYear()}`,
-                "border-color": record_border_color
+                "border-color": record_border_color 
             }
 
             $(".main__list__area").prepend(`<div class="main__list main__list__border--${Data['border-color']}">
