@@ -117,6 +117,7 @@ body {
             @include p-x(28px);
             @include p-y(35px);
             position: relative;
+            min-width: 70px;
 
             .header__resultBtn__value {
                 font-size: 32px;
@@ -138,7 +139,7 @@ body {
                 cursor: pointer;
 
                 &:hover {
-                    background-color: lighten($color: $green, $amount: 30%);
+                    opacity: 0.7;
                 }
             }
         }
@@ -150,6 +151,7 @@ body {
                 align-self: center;
                 margin-left: 15px;
                 @include m-y(0);
+                white-space: nowrap;
             }
         }
     }

@@ -23,10 +23,10 @@
 
             <div class="header__inputArea">
                 <span>身高 cm</span>
-                <input type="number" placeholder="請輸入身高">
+                <input class="height" type="number" placeholder="請輸入身高">
 
                 <span>體重 kg</span>
-                <input type="number" placeholder="請輸入體重">
+                <input class="weight" type="number" placeholder="請輸入體重">
             </div>
 
             <div class="header__calculateBtn__area">
@@ -34,16 +34,16 @@
 
                 <div class="header__resultBtn display_none">
                     <div class="header__resultBtn__area">
-                        <p class="header__resultBtn__value">20.90</p>
+                        <p class="header__resultBtn__value"></p>
                         <p>BMI</p>
 
-                        <div class="refresh">
+                        <div class="refresh" onclick="refresh()">
                             <img src="image/icons_loop.png" alt="刷新按鈕">
                         </div>
                     </div>
 
                     <div class="header__resultText__area">
-                        <h1 class="header__resultText">理想</h1>
+                        <h1 class="header__resultText"></h1>
                     </div>
                 </div>
             </div>
@@ -54,16 +54,17 @@
         <div class="main__area">
             <h1 class="main__title">BMI紀錄</h1>
 
-            <h2 class="main__title--no_Record display_none">查 無 紀 錄</h2>
+            <h2 class="main__title--no_Record">查 無 紀 錄</h2>
 
-            <div class="main__list">
-                <p class="main__list__status">理想</p>
-                <p><small>BMI</small><span class="main__list__BMI"><b>20.90</b></span></p>
-                <p><small>weight</small><span class="main__list__weight"><b>70kg</b></span></p>
-                <p><small>height</small><span class="main__list__height"><b>180cm</b></span></p>
-                <small class="main__list__date__title--mobile">檢測日期</small>
-                <p class="main__list__date">06-19-2017</p>
+            <div class="main__list__area">
+                <!-- 待JS動態載入 -->
             </div>
+
+            <div class="more_record display_none" onclick="all_record()">
+                <p>顯示更多</p>
+                <img src="image/icons_down.png" alt="more record">
+            </div>
+
         </div>
     </main>
 
