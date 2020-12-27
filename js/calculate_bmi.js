@@ -1,4 +1,8 @@
-var dataIndex = localStorage.length; //用來儲存BMI計算次數(最多紀錄10筆會做覆蓋的動作)
+//抓取所有紀錄的排序過後最大key值(最大為最後一筆)
+let localStorageKey = Object.keys(localStorage).sort()[localStorage.length-1] || "";
+//用來命名紀錄的key值索引(抓取key的最後一個字元看他索引是多少，加一是為了可以新增下一筆資料)
+var dataIndex = localStorageKey != "" ? parseInt(localStorageKey.substr(-1)) + 1 : 0;
+
 $(document).ready(function(){
     if(localStorage.length > 0){ //如果有紀錄時才做顯示動作
         show_record();
@@ -88,11 +92,11 @@ $(document).ready(function(){
             <p><small>height</small><span class="main__list__height"><b>${Data['height']}cm</b></span></p>
             <small class="main__list__date__title--mobile">檢測日期</small>
             <p class="main__list__date">${Data['date']}</p>
+            <i class="fa fa-trash trash${dataIndex}" onclick="del_record(${dataIndex})"></i>
         </div>`);
 
             localStorage.setItem("BMI_DATA" + dataIndex, JSON.stringify(Data));
             dataIndex++; //紀錄+1
-            if(dataIndex == 10) dataIndex = 0; //從第一筆開始覆蓋
         }
         else{
             alert("身高或體重欄位不可為空!");
@@ -113,23 +117,27 @@ function refresh(){
 function show_record(){
     let record;
     let record_html = "";
-
-    for(let i = localStorage.length - 1; i >= 0; i--){ //從最新到最舊顯示
+    let record_index = localStorage.length;
+    
+    for(let i = dataIndex; i >= 0 ; i--){ //從最新到最舊顯示
         record = JSON.parse(localStorage.getItem("BMI_DATA" + i));
-        
-        record_html += `<div class="main__list main__list__border--${record['border-color']} ${ i < localStorage.length - 10 ? 'display_none': ''}">
-        <p class="main__list__status">${record['resultText']}</p>
-        <p><small>BMI</small><span class="main__list__BMI"><b>${record['BMI']}</b></span></p>
-        <p><small>weight</small><span class="main__list__weight"><b>${record['weight']}kg</b></span></p>
-        <p><small>height</small><span class="main__list__height"><b>${record['height']}cm</b></span></p>
-        <small class="main__list__date__title--mobile">檢測日期</small>
-        <p class="main__list__date">${record['date']}</p>
-    </div>`
+
+        if(record != null){
+            record_html += `<div class="main__list main__list__border--${record['border-color']} ${ i < record_index - 10 ? 'display_none': ''}">
+            <p class="main__list__status">${record['resultText']}</p>
+            <p><small>BMI</small><span class="main__list__BMI"><b>${record['BMI']}</b></span></p>
+            <p><small>weight</small><span class="main__list__weight"><b>${record['weight']}kg</b></span></p>
+            <p><small>height</small><span class="main__list__height"><b>${record['height']}cm</b></span></p>
+            <small class="main__list__date__title--mobile">檢測日期</small>
+            <p class="main__list__date">${record['date']}</p>
+            <i class="fa fa-trash trash${i}" onclick="del_record(${i})"></i>
+        </div>`;
+        }
     }
 
     $(".main__list__area").append(record_html);
 
-    if(localStorage.length > 10){
+    if(record_index > 10){
         $(".more_record").removeClass("display_none");
     }
 }
@@ -138,4 +146,12 @@ function show_record(){
 function all_record(){
     $(".main__list").removeClass("display_none"); //將所有紀錄顯示出來
     $(".more_record").addClass("display_none"); //更多紀錄按鈕隱藏
+}
+
+//刪除紀錄
+function del_record(index){
+    if(confirm("你確定要刪除此筆紀錄嗎?")){
+        localStorage.removeItem("BMI_DATA" + index);
+        $(".trash" + index).parent()[0].remove(); //及時刪除畫面中該筆BMI紀錄
+    }
 }

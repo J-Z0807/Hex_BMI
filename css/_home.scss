@@ -81,12 +81,31 @@
         .main__list__date {
             margin-right: 20px;
             justify-content: center;
+            width: 15%;
 
             @include mobile-L {
                 margin: 0;
                 padding-bottom: 20px;
                 border-bottom: 0;
                 font-size: 20px;
+                width: 100%;
+            }
+        }
+
+        .fa-trash {
+            width: 5%;
+            font-size: 30px;
+            align-self: center;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            @include mobile-L {
+                display: block;
+                margin: 0 auto;
+                padding-bottom: 10px;
             }
         }
     }
