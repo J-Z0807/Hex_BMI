@@ -187,6 +187,7 @@ body {
   padding-bottom: 35px;
   position: relative;
   min-width: 70px;
+  max-height: 55px;
 }
 
 .header__area .header__resultBtn .header__resultBtn__area .header__resultBtn__value {
@@ -227,7 +228,6 @@ body {
   margin-left: 15px;
   margin-top: 0;
   margin-bottom: 0;
-  white-space: nowrap;
 }
 
 .footer__area {
